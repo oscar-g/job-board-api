@@ -1,29 +1,21 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "strictPropertyInitialization": false,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "node",
-      "mocha",
-      "chai"
+    "lib": [
+      "es5",
+      "es6"
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "sourceMap": true
   },
-  "include": [
+ "include": [
     "src/**/*.ts",
-    "tests/**/*.ts",
+    "tests/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -10,16 +10,16 @@
    "author": "Oscar Gonzalez <contact@oscargonalez.info>",
    "license": "MIT",
    "dependencies": {
-      "reflect-metadata": "^0.1.10",
-      "typeorm": "0.2.7",
-      "mysql": "^2.14.1",
+      "body-parser": "^1.18.1",
       "express": "^4.15.4",
-      "body-parser": "^1.18.1"
+      "pg": "^7.4.3",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.7"
    },
    "devDependencies": {
       "@types/node": "^8.0.29",
-      "ts-node": "3.3.0",
+      "ts-node": "^3.3.0",
       "tslint": "^5.11.0",
-      "typescript": "2.5.2"
+      "typescript": "^2.9.2"
    }
 }
