@@ -1,30 +1,15 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable} from 'typeorm';
 import { Company } from './Company';
 import { TaxonomyTerm } from './TaxonomyTerm';
+import { BaseEntity } from './BaseEntity';
 
 @Entity()
-export class Job {
+export class Job extends BaseEntity {
   @PrimaryGeneratedColumn()
   public id: number;
 
   @Column()
   public title: string;
-
-  @Column()
-  public description: string;
-
-  @Column()
-  public instructions: string;
-
-  @Column('json')
-  public location: {
-    name: string,
-    fullTime: 1|0,
-    contract: 1|0,
-    remote?: 1,
-    reloc?: 1,
-    visa?: 1,
-  };
 
   @ManyToOne((_) => Company, (x) => x.id)
   public company: Company;
@@ -32,4 +17,25 @@ export class Job {
   @ManyToMany((_) => TaxonomyTerm)
   @JoinTable()
   public categories: TaxonomyTerm[];
+
+  @Column()
+  public description: string;
+
+  @Column()
+  public instructions: string;
+
+  @Column()
+  public location: string;
+
+  @Column('boolean')
+  public fulltime: boolean;
+
+  @Column('boolean')
+  public contract: boolean;
+
+  @Column('boolean')
+  public reloc: boolean;
+
+  @Column('boolean')
+  public visa: boolean;
 }
