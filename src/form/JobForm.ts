@@ -2,10 +2,11 @@ import { Job } from '../entity/Job';
 import * as Joi from 'joi';
 import BaseForm from './BaseForm';
 import { plainToClass } from 'class-transformer';
+import { None, none, some, Option } from 'ts-option';
 
 const jobFormSchema = Joi.object({
-  title: Joi.string().required().max(150),
-  description: Joi.string().required(),
+  title: Joi.string().required().max(150).label('Job Title'),
+  description: Joi.string().required().max(1000).tags('textarea'),
   instructions: Joi.string().required().max(500),
   location: Joi.string().required(),
   fulltime: Joi.boolean().required(),
@@ -14,14 +15,9 @@ const jobFormSchema = Joi.object({
   visa: Joi.boolean().required(),
 });
 
-class JobForm extends BaseForm<{
-  title: string,
-}, Job> {
+class JobForm extends BaseForm<Job> {
   public schema = jobFormSchema;
-
-  public toModel() {
-    return plainToClass(Job, this.validatedInput);
-  }
+  public ModelClass = Job;
 }
 
 export { jobFormSchema, JobForm };
