@@ -1,8 +1,10 @@
 import * as Joi from 'joi';
+import {Option, some, none} from 'ts-option';
 
-export default abstract class BaseForm<O, M> {
+export default abstract class BaseForm<Model> {
   public schema: Joi.Schema;
-  public validatedInput?: O;
+  public validatedInput?: any;
+  public validationError?: Joi.ValidationError;
 
   protected validatorOptions: Joi.ValidationOptions = {
     allowUnknown: false,
@@ -11,15 +13,26 @@ export default abstract class BaseForm<O, M> {
 
   constructor(public input: any) { }
 
-  public validate(): Joi.ValidationResult<O> {
+  public validate(): Option<Model> {
     const result = Joi.validate(this.input, this.schema, this.validatorOptions);
 
-    if (result.value && !result.error) {
-      this.validatedInput = result.value;
+    if (result.error) {
+      this.validationError = result.error;
+    } else {
+      // if (result.value) {
+        this.validatedInput = result.value;
+      // }
     }
 
-    return result;
+    return this.toModelOpt();
   }
 
-  public abstract toModel(): M;
+  public errors(): Option<Joi.ValidationError> {
+    if (this.validationError) {
+      return some(this.validationError);
+    } else {
+      return none;
+    }
+  }
+  protected abstract toModelOpt(): Option<Model>;
 }
