@@ -11,8 +11,8 @@ const jobFormSchema = Joi.object({
   location: Joi.string().required(),
   fulltime: Joi.boolean().required(),
   contract: Joi.boolean().required(),
-  reloc: Joi.boolean().required(),
-  visa: Joi.boolean().required(),
+  reloc: Joi.boolean().optional().default(false),
+  visa: Joi.boolean().optional().default(false),
 });
 
 class JobForm extends BaseForm<Job> {

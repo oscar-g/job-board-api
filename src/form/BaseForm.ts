@@ -38,8 +38,9 @@ export default abstract class BaseForm<Model> {
   }
 
   protected toModelOpt() {
+    const {ModelClass, validatedInput} = this;
     return this.errors().match<Option<Model>>({
-      none() { return some(plainToClass(this.ModelClass, this.validatedInput as object)); },
+      none() { return some(plainToClass(ModelClass, validatedInput as object)); },
       some(e) { return none; },
     });
   }

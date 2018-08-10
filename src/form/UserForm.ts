@@ -12,3 +12,5 @@ class UserForm extends BaseForm<User> {
   public schema = userFormSchema;
   public ModelClass = User;
 }
+
+export { userFormSchema, UserForm };

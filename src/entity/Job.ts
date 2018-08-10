@@ -32,9 +32,15 @@ export class Job {
   @Column('boolean')
   public contract: boolean;
 
-  @Column('boolean')
+  @Column('boolean', {
+    default: false,
+    nullable: true,
+  })
   public reloc: boolean;
 
-  @Column('boolean')
+  @Column('boolean', {
+    default: false,
+    nullable: true,
+  })
   public visa: boolean;
 }
