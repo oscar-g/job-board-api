@@ -1,10 +1,9 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable} from 'typeorm';
 import { Company } from './Company';
 import { TaxonomyTerm } from './TaxonomyTerm';
-import { BaseEntity } from './BaseEntity';
 
 @Entity()
-export class Job extends BaseEntity {
+export class Job {
   @PrimaryGeneratedColumn()
   public id: number;
 

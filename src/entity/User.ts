@@ -15,9 +15,14 @@ export class User {
   @Column()
   public email: string;
 
-  @Column()
+  @Column('boolean', {
+    default: false,
+    nullable: true,
+  })
   public active: boolean;
 
-  @OneToOne((_) => Company)
+  @OneToOne((_) => Company, {
+    nullable: true,
+  })
   public company: Promise<Company>;
 }
