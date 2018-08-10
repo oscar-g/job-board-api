@@ -1,10 +1,12 @@
 import * as Joi from 'joi';
 import {Option, some, none} from 'ts-option';
+import { plainToClass } from 'class-transformer';
 
 export default abstract class BaseForm<Model> {
   public schema: Joi.Schema;
   public validatedInput?: any;
   public validationError?: Joi.ValidationError;
+  public abstract ModelClass: (new () => Model);
 
   protected validatorOptions: Joi.ValidationOptions = {
     allowUnknown: false,
@@ -34,5 +36,11 @@ export default abstract class BaseForm<Model> {
       return none;
     }
   }
-  protected abstract toModelOpt(): Option<Model>;
+
+  protected toModelOpt() {
+    return this.errors().match<Option<Model>>({
+      none() { return some(plainToClass(this.ModelClass, this.validatedInput as object)); },
+      some(e) { return none; },
+    });
+  }
 }
