@@ -1,5 +1,5 @@
 {
-   "name": "job-board",
+   "name": "job-board-api",
    "version": "1.0.0",
    "description": "",
    "main": "index.js",
@@ -11,13 +11,18 @@
    "license": "MIT",
    "dependencies": {
       "body-parser": "^1.18.1",
+      "class-transformer": "^0.1.9",
       "express": "^4.15.4",
+      "joi": "^13.5.2",
       "pg": "^7.4.3",
       "reflect-metadata": "^0.1.10",
+      "ts-option": "^1.1.5",
       "typeorm": "0.2.7"
    },
    "devDependencies": {
-      "@types/node": "^8.0.29",
+      "@types/joi": "^13.4.1",
+      "@types/express": "^4.16.0",
+      "@types/node": "^8.10.24",
       "ts-node": "^3.3.0",
       "tslint": "^5.11.0",
       "typescript": "^2.9.2"
