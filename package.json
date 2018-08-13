@@ -1,7 +1,8 @@
 {
-   "name": "job-board-api",
+   "name": "@oscar-g/job-board-api",
+   
    "version": "1.0.0",
-   "description": "Controllers, entities, forms for a job board",
+   "description": "A data API for a job board",
    "main": "src/index.ts",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
