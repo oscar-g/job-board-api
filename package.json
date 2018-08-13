@@ -1,12 +1,10 @@
 {
    "name": "@oscar-g/job-board-api",
-   
    "version": "1.0.0",
    "description": "A data API for a job board",
    "main": "src/index.ts",
    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "ts-node src/index.ts"
+      "test": "echo \"Error: no test specified\" && exit 1"
    },
    "author": "Oscar Gonzalez <contact@oscargonalez.info>",
    "license": "MIT",
