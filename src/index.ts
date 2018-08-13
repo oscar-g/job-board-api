@@ -7,11 +7,13 @@ export * from './controller/UserController';
 import { Company } from './entity/Company';
 import { Job } from './entity/Job';
 import { User } from './entity/User';
+import { Taxonomy } from './entity/Taxonomy';
+import { TaxonomyTerm } from './entity/TaxonomyTerm';
 
 export { Company };
 export { Job };
 export { User };
-export const entities = [Company, Job, User];
+export const entities = [Company, Job, User, Taxonomy, TaxonomyTerm];
 
 // forms
 export * from './form/BaseForm';
