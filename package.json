@@ -13,16 +13,18 @@
       "joi": "^13.6.0",
       "reflect-metadata": "^0.1.10",
       "ts-option": "^1.1.5"
-    },
-    "devDependencies": {
-        "@types/express": "^4.16.0",
-        "@types/joi": "^13.4.2",
-        "@types/node": "^8.10.24",
-        "ts-node": "^3.3.0",
-        "tslint": "^5.11.0",
-        "typescript": "^2.9.2",
-        "express": "^4.16.3",
-        "typeorm": "^0.2.7"
+   },
+   "devDependencies": {
+      "@types/express": "^4.16.0",
+      "@types/faker": "^4.1.2",
+      "@types/joi": "^13.4.2",
+      "@types/node": "^8.10.24",
+      "express": "^4.16.3",
+      "faker": "^4.1.0",
+      "ts-node": "^3.3.0",
+      "tslint": "^5.11.0",
+      "typeorm": "^0.2.7",
+      "typescript": "^2.9.2"
    },
    "peerDependencies": {
       "typeorm": "0.2.x",
