@@ -5,7 +5,7 @@ import {  JobForm } from '../form/JobForm';
 import BaseFormController from './BaseFormController';
 
 export class JobController extends BaseFormController<Job, JobForm> {
-  public repo = this.getRepository(Job);
+  public repo = this.db.getRepository(Job);
   public Form = JobForm;
 
   public async allLatest(req: Request, res: Response, next: NextFunction) {

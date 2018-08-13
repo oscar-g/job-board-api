@@ -1,7 +1,7 @@
-import { getRepository } from 'typeorm';
+import { Connection } from 'typeorm';
 import BaseForm from '../form/BaseForm';
 import { Response, NextFunction } from 'express';
 
 export default abstract class BaseController {
-  protected getRepository = getRepository;
+  constructor(protected db: Connection){}
 }
