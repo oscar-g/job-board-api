@@ -4,9 +4,14 @@ export * from './controller/JobController';
 export * from './controller/UserController';
 
 // entities
-export * from './entity/Company';
-export * from './entity/Job';
-export * from './entity/User';
+import { Company } from './entity/Company';
+import { Job } from './entity/Job';
+import { User } from './entity/User';
+
+export { Company };
+export { Job };
+export { User };
+export const entities = [Company, Job, User];
 
 // forms
 export * from './form/BaseForm';
