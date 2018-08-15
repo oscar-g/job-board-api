@@ -8,6 +8,10 @@
    },
    "author": "Oscar Gonzalez <contact@oscargonalez.info>",
    "license": "MIT",
+   "repository": {
+       "type": "git",
+       "url": "https://github.com/oscar-g/job-board-api.git"
+   },
    "dependencies": {
       "class-transformer": "^0.1.9",
       "joi": "^13.6.0",
