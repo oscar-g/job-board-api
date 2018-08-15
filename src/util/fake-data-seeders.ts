@@ -51,6 +51,8 @@ export const seedFakeData = (con: Connection) => (numCompanies: number, numJobs:
         contract: !!(Math.round(Math.random())),
         reloc: !!(Math.round(Math.random())),
         visa: !!(Math.round(Math.random())),
+        active: 1,
+        created: faker.date.recent(120),
       };
 
       saveJobs.push(

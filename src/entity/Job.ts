@@ -7,6 +7,18 @@ export class Job {
   @PrimaryGeneratedColumn()
   public id: number;
 
+  @Column('boolean', {
+    nullable: true,
+    default: false,
+  })
+  public active: boolean;
+
+  @Column('date', {
+    nullable: true,
+    default: 'NOW()',
+  })
+  public created: Date;
+
   @Column()
   public title: string;
 
