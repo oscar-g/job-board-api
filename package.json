@@ -1,6 +1,6 @@
 {
    "name": "@oscar-g/job-board-api",
-   "version": "1.0.0",
+   "version": "1.1.0",
    "description": "A data API for a job board",
    "main": "src/index.ts",
    "scripts": {
@@ -9,8 +9,8 @@
    "author": "Oscar Gonzalez <contact@oscargonalez.info>",
    "license": "MIT",
    "repository": {
-       "type": "git",
-       "url": "https://github.com/oscar-g/job-board-api.git"
+      "type": "git",
+      "url": "https://github.com/oscar-g/job-board-api.git"
    },
    "dependencies": {
       "class-transformer": "^0.1.9",
