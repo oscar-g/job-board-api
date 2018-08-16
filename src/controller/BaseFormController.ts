@@ -11,7 +11,7 @@ export default abstract class BaseFormController<Model, Form>  extends BaseContr
   public async create(req: Request, res: Response, next: NextFunction) {
     const form = new this.Form(req.body);
 
-    form.validate().fold(() => {
+    return form.validate().fold(() => {
       const e = form.errors();
       if (e.exists) {
         res.json(e.get).status(400);

@@ -13,7 +13,7 @@ const fakeCompanies = (num: number): Company[] => {
     const m = {
       name: faker.company.companyName(),
       description: faker.lorem.paragraphs(2),
-      tagline: faker.company.catchPhrase(),
+      tagline: !!(Math.round(Math.random())) ? faker.company.catchPhrase() : null,
       url: faker.internet.url(),
     };
 
@@ -41,7 +41,7 @@ export const seedFakeData = (con: Connection) => (numCompanies: number, numJobs:
 
     for (let i = 0; i < numJobs; i++) {
       const model = {
-        title: faker.fake('{{name.jobType}} {{name.jobTitle}}'),
+        title: faker.name.jobTitle(),
         company: companyIds[Math.floor(Math.random() * companyIds.length)],
         // categories: TaxonomyTerm[],
         description: faker.lorem.paragraphs(2),

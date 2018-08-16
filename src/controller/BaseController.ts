@@ -3,5 +3,5 @@ import BaseForm from '../form/BaseForm';
 import { Response, NextFunction } from 'express';
 
 export default abstract class BaseController {
-  constructor(protected db: Connection){}
+  constructor(protected db: Connection) {}
 }
