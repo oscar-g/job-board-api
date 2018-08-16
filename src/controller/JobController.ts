@@ -22,6 +22,7 @@ export class JobController extends BaseFormController<Job, JobForm> {
         created: -1,
         title: 1,
       },
+      relations: ['company'],
     };
 
     return this.repo.count({ active: true })
