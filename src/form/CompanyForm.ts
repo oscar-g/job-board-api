@@ -3,12 +3,12 @@ import { Company } from '../entity/Company';
 import BaseForm from './BaseForm';
 
 const companyFormSchema = object({
-  name: string().required().max(100),
-  description: string().required().max(1000).tags('textarea'),
-  tagline: string().optional().max(150),
+  name: string().required().max(100).label('Company Name'),
+  description: string().required().max(1000).tags('wysiwyg').label('description'),
+  tagline: string().optional().max(150).label('Tagline'),
   url: string().uri({
     scheme: ['http', 'https'],
-  }),
+  }).label('Website'),
   // @todo validate + upload logo img
   // logoSrc: string().optional(),
 });
