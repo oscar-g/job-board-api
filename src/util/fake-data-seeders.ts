@@ -1,7 +1,7 @@
-import { Connection  } from 'typeorm';
 import { plainToClass } from 'class-transformer';
-import { Company, Job } from './../../../api/src';
 import * as faker from 'faker';
+import { Connection  } from 'typeorm';
+import { Company, Job } from './../../../api/src';
 
 const fakeCompanies = (num: number): Company[] => {
   const ids = [];
@@ -36,6 +36,7 @@ export const seedFakeData = (con: Connection) => (numCompanies: number, numJobs:
   });
 
   Promise.all(saveComps).then((companyIds) => {
+    // tslint:disable-next-line:no-console
     console.log('company ids', companyIds);
     const saveJobs: Array<Promise<number>> = [];
 
@@ -60,6 +61,7 @@ export const seedFakeData = (con: Connection) => (numCompanies: number, numJobs:
       );
 
       Promise.all(saveJobs).then((jobIds) => {
+        // tslint:disable-next-line:no-console
         console.log('job ids', jobIds);
       });
     }

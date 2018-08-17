@@ -1,7 +1,5 @@
-import { NextFunction, Request, Response } from 'express';
-import BaseController from './BaseController';
-import { CompanyForm } from '../form/CompanyForm';
 import { Company } from '../entity/Company';
+import { CompanyForm } from '../form/CompanyForm';
 import BaseFormController from './BaseFormController';
 
 export class CompanyController extends BaseFormController<Company, CompanyForm> {

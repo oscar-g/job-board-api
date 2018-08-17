@@ -9,6 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
     "declarationDir": "dist/types",

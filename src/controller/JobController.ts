@@ -1,9 +1,8 @@
-import {NextFunction, Request, Response, json} from 'express';
+import {NextFunction, Request, Response} from 'express';
+import { FindManyOptions } from 'typeorm';
 import { Job } from '../entity/Job';
-import BaseController from './BaseController';
 import {  JobForm } from '../form/JobForm';
 import BaseFormController from './BaseFormController';
-import { FindManyOptions } from 'typeorm';
 
 export class JobController extends BaseFormController<Job, JobForm> {
   public repo = this.db.getRepository(Job);

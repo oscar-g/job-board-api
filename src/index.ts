@@ -6,9 +6,9 @@ export * from './controller/UserController';
 // entities
 import { Company } from './entity/Company';
 import { Job } from './entity/Job';
-import { User } from './entity/User';
 import { Taxonomy } from './entity/Taxonomy';
 import { TaxonomyTerm } from './entity/TaxonomyTerm';
+import { User } from './entity/User';
 
 export { Company };
 export { Job };

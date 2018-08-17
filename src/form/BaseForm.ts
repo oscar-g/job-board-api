@@ -1,6 +1,6 @@
-import * as Joi from 'joi';
-import {Option, some, none} from 'ts-option';
 import { plainToClass } from 'class-transformer';
+import * as Joi from 'joi';
+import {none, Option, some} from 'ts-option';
 
 export default abstract class BaseForm<Model> {
   public schema: Joi.Schema;

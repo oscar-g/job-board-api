@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne} from 'typeorm';
+import {Column, Entity, OneToOne, PrimaryGeneratedColumn} from 'typeorm';
 import { Taxonomy } from './Taxonomy';
 
 @Entity()
