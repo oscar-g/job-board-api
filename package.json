@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "ts-option": "^1.1.5",
-        "@oscar-g/job-board-schema": "^1.1.0"
+        "@oscar-g/job-board-schema": "1.0.2"
     },
     "devDependencies": {
         "@types/express": "^4.16.0",
