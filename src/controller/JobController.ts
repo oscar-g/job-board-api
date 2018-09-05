@@ -5,6 +5,7 @@ import {  JobForm } from '../form/JobForm';
 import BaseFormController from './BaseFormController';
 
 export class JobController extends BaseFormController<Job, JobForm> {
+  public defaultRelations = ['company'];
   public repo = this.db.getRepository(Job);
   public Form = JobForm;
 
@@ -21,7 +22,7 @@ export class JobController extends BaseFormController<Job, JobForm> {
         created: -1,
         title: 1,
       },
-      relations: ['company'],
+      relations: this.defaultRelations,
     };
 
     return this.repo.count({ active: true })
