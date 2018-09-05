@@ -1,11 +1,9 @@
 import { Response } from 'express';
 import { NextFunction, Request } from 'express-serve-static-core';
-import { Repository } from 'typeorm';
 import BaseForm from '../form/BaseForm';
 import BaseController from './BaseController';
 
-export default abstract class BaseFormController<Model, Form>  extends BaseController {
-  public abstract repo: Repository<Model>;
+export default abstract class BaseFormController<Model, Form>  extends BaseController<Model> {
   public abstract Form: (new (input: any) => BaseForm<Model>);
 
   public async create(req: Request, res: Response, next: NextFunction) {
