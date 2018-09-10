@@ -1,4 +1,5 @@
 // controllers
+export * from './controller/BaseController';
 export * from './controller/CompanyController';
 export * from './controller/JobController';
 export * from './controller/UserController';
